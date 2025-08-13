@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useT } from "../../components/Providers";
 
 export default function Page() {
   const [tab, setTab] = useState<"home" | "how">("home");
+  const t = useT();
 
   return (
     <section className="space-y-6">
@@ -22,24 +23,24 @@ export default function Page() {
             className={`px-3 py-1.5 rounded-xl2 border ${tab === "how" ? "bg-brand text-white border-brand" : "border-neutral-200 dark:border-neutral-800"}`}
             aria-pressed={tab === "how"}
           >
-            Come funziona
+            {t("home.how")}
           </button>
         </div>
 
         {tab === "home" && (
           <div className="mt-6">
-            <h1 className="text-3xl font-bold">AlcoolTest</h1>
+            <h1 className="text-3xl font-bold">{t("home.title")}</h1>
             <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-              Calcolatore di stima del tasso alcolemico (BAC).
+              {t("home.subtitle")}
             </p>
           </div>
         )}
 
         {tab === "how" && (
           <div className="mt-6">
-            <h2 className="text-xl font-semibold">Come funziona</h2>
+            <h2 className="text-xl font-semibold">{t("home.how")}</h2>
             <ul className="list-disc pl-5 mt-2 space-y-1 text-neutral-700 dark:text-neutral-300">
-              <li>Installabile su desktop e mobile.</li>
+              <li>{t("home.installable")}</li>
             </ul>
           </div>
         )}

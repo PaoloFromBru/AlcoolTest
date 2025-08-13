@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "title": "AlcoolTest",
+    "calculator": "Calculator"
+  },
+  "home": {
+    "title": "AlcoolTest",
+    "subtitle": "Estimated blood alcohol content (BAC) calculator.",
+    "how": "How it works",
+    "installable": "Installable on desktop and mobile."
+  },
+  "footer": {
+    "warn": "Indicative estimate, do not use to decide whether to drive.",
+    "limit": "General limit in Italy: 0.5 g/L. For novice drivers the limit is 0 g/L (zero tolerance)."
+  },
+  "calc": {
+    "session": "Evening session",
+    "weight": "Weight (kg)",
+    "sex": "Sex",
+    "male": "Male",
+    "female": "Female",
+    "withFood": "Taken with food",
+    "presets": [
+      "Beer 5%",
+      "Wine glass 12.5%",
+      "Spritz 11%",
+      "Amaro 30%"
+    ],
+    "name": "Name",
+    "volume": "Volume (ml)",
+    "abv": "% abv",
+    "time": "Time (min from start)",
+    "addHint": "Add a drink with the presets above.",
+    "timeline": "Elapsed time (min)",
+    "bacAt": "Estimated BAC at selected minute",
+    "newDrivers": "Novice drivers: limit 0 g/L (zero tolerance).",
+    "peak": "Predicted peak",
+    "below05": "Below 0.5 g/L",
+    "atZero": "At 0 g/L",
+    "note": "Simplified Widmark model. Indicative estimate; do not use to decide whether to drive."
+  }
+}

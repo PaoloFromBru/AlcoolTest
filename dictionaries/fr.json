@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "title": "AlcoolTest",
+    "calculator": "Calculateur"
+  },
+  "home": {
+    "title": "AlcoolTest",
+    "subtitle": "Calculateur estimatif du taux d’alcoolémie (BAC).",
+    "how": "Comment ça marche",
+    "installable": "Installable sur ordinateur et mobile."
+  },
+  "footer": {
+    "warn": "Estimation indicative, ne pas utiliser pour décider de conduire.",
+    "limit": "Seuil général en Italie : 0,5 g/L. Pour les jeunes conducteurs : 0 g/L (tolérance zéro)."
+  },
+  "calc": {
+    "session": "Soirée",
+    "weight": "Poids (kg)",
+    "sex": "Sexe",
+    "male": "Homme",
+    "female": "Femme",
+    "withFood": "Pris avec nourriture",
+    "presets": [
+      "Bière 5%",
+      "Verre de vin 12,5%",
+      "Spritz 11%",
+      "Amaro 30%"
+    ],
+    "name": "Nom",
+    "volume": "Volume (ml)",
+    "abv": "% vol",
+    "time": "Heure (min depuis le début)",
+    "addHint": "Ajoutez une boisson via les préréglages ci-dessus.",
+    "timeline": "Temps écoulé (min)",
+    "bacAt": "Alcoolémie estimée à la minute sélectionnée",
+    "newDrivers": "Jeunes conducteurs : limite 0 g/L (tolérance zéro).",
+    "peak": "Pic prévu",
+    "below05": "Sous 0,5 g/L",
+    "atZero": "À 0 g/L",
+    "note": "Modèle Widmark simplifié. Estimation indicative ; ne pas utiliser pour décider de conduire."
+  }
+}

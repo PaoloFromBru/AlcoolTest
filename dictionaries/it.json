@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "title": "AlcoolTest",
+    "calculator": "Calcolatore"
+  },
+  "home": {
+    "title": "AlcoolTest",
+    "subtitle": "Calcolatore di stima del tasso alcolemico (BAC).",
+    "how": "Come funziona",
+    "installable": "Installabile su desktop e mobile."
+  },
+  "footer": {
+    "warn": "Stima indicativa, non usare per decidere se guidare.",
+    "limit": "Limite generale in Italia: 0,5 g/L. Per neopatentati il limite è 0 g/L (tolleranza zero)."
+  },
+  "calc": {
+    "session": "Sessione serata",
+    "weight": "Peso (kg)",
+    "sex": "Sesso",
+    "male": "Maschio",
+    "female": "Femmina",
+    "withFood": "Assunzione con cibo",
+    "presets": [
+      "Birra 5%",
+      "Calice vino 12,5%",
+      "Spritz 11%",
+      "Amaro 30%"
+    ],
+    "name": "Nome",
+    "volume": "Volume (ml)",
+    "abv": "% vol",
+    "time": "Orario (min da inizio)",
+    "addHint": "Aggiungi una bevanda con i preset qui sopra.",
+    "timeline": "Tempo trascorso (min)",
+    "bacAt": "Tasso alcolemico stimato al minuto selezionato",
+    "newDrivers": "Neopatentati: limite 0 g/L (tolleranza zero).",
+    "peak": "Picco previsto",
+    "below05": "Sotto 0,5 g/L",
+    "atZero": "A 0 g/L",
+    "note": "Modello semplificato (Widmark). Stima indicativa, non usare per decidere se guidare."
+  }
+}

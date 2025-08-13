@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "title": "AlcoolTest",
+    "calculator": "Rekenmachine"
+  },
+  "home": {
+    "title": "AlcoolTest",
+    "subtitle": "Schatting van het alcoholpromillage (BAC).",
+    "how": "Hoe werkt het",
+    "installable": "Installeerbaar op desktop en mobiel."
+  },
+  "footer": {
+    "warn": "Indicatieve schatting; niet gebruiken om te beslissen of u gaat rijden.",
+    "limit": "Algemene limiet in Italië: 0,5 g/L. Voor beginnende bestuurders: 0 g/L (zero tolerance)."
+  },
+  "calc": {
+    "session": "Avondsessie",
+    "weight": "Gewicht (kg)",
+    "sex": "Geslacht",
+    "male": "Man",
+    "female": "Vrouw",
+    "withFood": "Genomen met voedsel",
+    "presets": [
+      "Bier 5%",
+      "Wijnglas 12,5%",
+      "Spritz 11%",
+      "Amaro 30%"
+    ],
+    "name": "Naam",
+    "volume": "Volume (ml)",
+    "abv": "% vol",
+    "time": "Tijd (min vanaf start)",
+    "addHint": "Voeg een drankje toe met de presets hierboven.",
+    "timeline": "Verstreken tijd (min)",
+    "bacAt": "Geschatte BAC op de geselecteerde minuut",
+    "newDrivers": "Beginnende bestuurders: limiet 0 g/L (zero tolerance).",
+    "peak": "Verwachte piek",
+    "below05": "Onder 0,5 g/L",
+    "atZero": "Op 0 g/L",
+    "note": "Vereenvoudigd Widmark-model. Indicatieve schatting; niet gebruiken om te beslissen of u gaat rijden."
+  }
+}
