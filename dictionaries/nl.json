@@ -37,6 +37,12 @@
     "peak": "Verwachte piek",
     "below05": "Onder 0,5 g/L",
     "atZero": "Op 0 g/L",
-    "note": "Vereenvoudigd Widmark-model. Indicatieve schatting; niet gebruiken om te beslissen of u gaat rijden."
+    "note": "Vereenvoudigd Widmark-model. Indicatieve schatting; niet gebruiken om te beslissen of u gaat rijden.",
+    "seeChart": "Grafiek bekijken",
+    "chartTitle": "BAC-verloop",
+    "chartClose": "Sluiten",
+    "chartInfo": "• Rode lijn = 0,5 g/L grens • Grijze lijn = 0 g/L • Gemarkeerd punt = piek",
+    "chartTime": "tijd (min)",
+    "chartBac": "g/L"
   }
 }

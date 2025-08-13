@@ -37,6 +37,12 @@
     "peak": "Pic prévu",
     "below05": "Sous 0,5 g/L",
     "atZero": "À 0 g/L",
-    "note": "Modèle Widmark simplifié. Estimation indicative ; ne pas utiliser pour décider de conduire."
+    "note": "Modèle Widmark simplifié. Estimation indicative ; ne pas utiliser pour décider de conduire.",
+    "seeChart": "Voir le graphique",
+    "chartTitle": "Évolution du BAC",
+    "chartClose": "Fermer",
+    "chartInfo": "• Ligne rouge = seuil 0,5 g/L • Ligne grise = 0 g/L • Point en évidence = pic",
+    "chartTime": "temps (min)",
+    "chartBac": "g/L"
   }
 }
