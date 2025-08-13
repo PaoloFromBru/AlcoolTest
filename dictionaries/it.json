@@ -37,6 +37,12 @@
     "peak": "Picco previsto",
     "below05": "Sotto 0,5 g/L",
     "atZero": "A 0 g/L",
-    "note": "Modello semplificato (Widmark). Stima indicativa, non usare per decidere se guidare."
+    "note": "Modello semplificato (Widmark). Stima indicativa, non usare per decidere se guidare.",
+    "seeChart": "Vedi grafico",
+    "chartTitle": "Andamento BAC",
+    "chartClose": "Chiudi",
+    "chartInfo": "• Linea rossa = soglia 0,5 g/L • Linea grigia = 0 g/L • Punto evidenziato = picco",
+    "chartTime": "tempo (min)",
+    "chartBac": "g/L"
   }
 }

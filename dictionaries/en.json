@@ -37,6 +37,12 @@
     "peak": "Predicted peak",
     "below05": "Below 0.5 g/L",
     "atZero": "At 0 g/L",
-    "note": "Simplified Widmark model. Indicative estimate; do not use to decide whether to drive."
+    "note": "Simplified Widmark model. Indicative estimate; do not use to decide whether to drive.",
+    "seeChart": "See chart",
+    "chartTitle": "BAC trend",
+    "chartClose": "Close",
+    "chartInfo": "• Red line = 0.5 g/L threshold • Grey line = 0 g/L • Highlighted point = peak",
+    "chartTime": "time (min)",
+    "chartBac": "g/L"
   }
 }

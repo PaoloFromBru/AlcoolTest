@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { useT } from "../../../components/Providers";
 
 type Sex = "M" | "F";
@@ -107,7 +108,7 @@ export default function CalcPage() {
       <div className="card space-y-4">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold">{t("calc.session")}</h1>
-          <button className="btn" onClick={() => setShowChart(true)}>📈 Vedi grafico</button>
+          <button className="btn" onClick={() => setShowChart(true)}>📈 {t("calc.seeChart")}</button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <label className="space-y-1 col-span-1">
@@ -241,6 +242,7 @@ function ChartOverlay({
   sample: (t: number) => number;
   peak: { t: number; bac: number };
 }) {
+  const t = useT();
   const padding = { top: 16, right: 16, bottom: 28, left: 36 };
   const [tooltip, setTooltip] = useState<{ x: number; y: number; t: number; bac: number } | null>(null);
 
@@ -253,12 +255,12 @@ function ChartOverlay({
 
   const maxBac = Math.max(0.6, peak.bac * 1.2);
 
-  return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="w-full max-w-3xl rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-soft">
+  const overlay = (
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+      <div className="w-full max-w-3xl m-4 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-soft">
         <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-800">
-          <h2 className="text-lg font-semibold">Andamento BAC</h2>
-          <button className="btn" onClick={onClose}>Chiudi</button>
+          <h2 className="text-lg font-semibold">{t("calc.chartTitle")}</h2>
+          <button className="btn" onClick={onClose}>{t("calc.chartClose")}</button>
         </div>
         <div className="p-4">
           <ResponsiveSvg
@@ -269,7 +271,7 @@ function ChartOverlay({
             onHover={setTooltip}
           />
           <div className="mt-2 text-sm text-neutral-500">
-            • Linea rossa = soglia 0,5 g/L • Linea grigia = 0 g/L • Punto evidenziato = picco
+            {t("calc.chartInfo")}
           </div>
         </div>
       </div>
@@ -283,6 +285,8 @@ function ChartOverlay({
       )}
     </div>
   );
+
+  return createPortal(overlay, document.body);
 }
 
 function ResponsiveSvg({
@@ -298,6 +302,7 @@ function ResponsiveSvg({
   peak: { t: number; bac: number };
   onHover: (p: { x: number; y: number; t: number; bac: number } | null) => void;
 }) {
+  const t = useT();
   const width = 800;
   const height = 260;
   const innerW = width - padding.left - padding.right;
@@ -334,8 +339,8 @@ function ResponsiveSvg({
         <text x={padding.left - 10} y={y(0)} textAnchor="end">0</text>
         <text x={padding.left - 10} y={y(0.5)} textAnchor="end">0.5</text>
         <text x={padding.left - 10} y={y(maxBac)} textAnchor="end">{maxBac.toFixed(1)}</text>
-        <text x={(padding.left + 800 - padding.right) / 2} y={height - 6} textAnchor="middle">tempo (min)</text>
-        <text x={padding.left - 24} y={padding.top + 12} textAnchor="end">g/L</text>
+        <text x={(padding.left + 800 - padding.right) / 2} y={height - 6} textAnchor="middle">{t("calc.chartTime")}</text>
+        <text x={padding.left - 24} y={padding.top + 12} textAnchor="end">{t("calc.chartBac")}</text>
       </g>
 
       <line x1={padding.left} x2={800 - padding.right} y1={y(0)} y2={y(0)} stroke="currentColor" opacity={0.3} />
