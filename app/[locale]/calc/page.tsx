@@ -243,7 +243,7 @@ function ChartOverlay({
   peak: { t: number; bac: number };
 }) {
   const t = useT();
-  const padding = { top: 16, right: 16, bottom: 28, left: 36 };
+  const padding = { top: 16, right: 16, bottom: 40, left: 44 };
   const [tooltip, setTooltip] = useState<{ x: number; y: number; t: number; bac: number } | null>(null);
 
   const data = useMemo(() => {
@@ -256,8 +256,8 @@ function ChartOverlay({
   const maxBac = Math.max(0.6, peak.bac * 1.2);
 
   const overlay = (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
-      <div className="w-full max-w-3xl m-4 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-soft">
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center overflow-y-auto">
+      <div className="w-full max-w-4xl m-4 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-soft">
         <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-800">
           <h2 className="text-lg font-semibold">{t("calc.chartTitle")}</h2>
           <button className="btn" onClick={onClose}>{t("calc.chartClose")}</button>
@@ -303,8 +303,8 @@ function ResponsiveSvg({
   onHover: (p: { x: number; y: number; t: number; bac: number } | null) => void;
 }) {
   const t = useT();
-  const width = 800;
-  const height = 260;
+  const width = 820;
+  const height = 280;
   const innerW = width - padding.left - padding.right;
   const innerH = height - padding.top - padding.bottom;
 
@@ -322,7 +322,7 @@ function ResponsiveSvg({
   const gridY = [0, 0.5, Math.round(maxBac * 100) / 100];
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-[260px]">
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-[280px]">
       <g stroke="currentColor" opacity={0.1}>
         {gridX.map((t) => (
           <line key={`gx${t}`} x1={x(t)} x2={x(t)} y1={padding.top} y2={height - padding.bottom} />
@@ -334,17 +334,17 @@ function ResponsiveSvg({
 
       <g fill="currentColor" opacity={0.6} fontSize={12}>
         {gridX.map((t) => (
-          <text key={`lx${t}`} x={x(t)} y={height - 6} textAnchor="middle">{t}m</text>
+          <text key={`lx${t}`} x={x(t)} y={height - 20} textAnchor="middle">{t}m</text>
         ))}
         <text x={padding.left - 10} y={y(0)} textAnchor="end">0</text>
         <text x={padding.left - 10} y={y(0.5)} textAnchor="end">0.5</text>
         <text x={padding.left - 10} y={y(maxBac)} textAnchor="end">{maxBac.toFixed(1)}</text>
-        <text x={(padding.left + 800 - padding.right) / 2} y={height - 6} textAnchor="middle">{t("calc.chartTime")}</text>
-        <text x={padding.left - 24} y={padding.top + 12} textAnchor="end">{t("calc.chartBac")}</text>
+        <text x={(padding.left + width - padding.right) / 2} y={height - 4} textAnchor="middle">{t("calc.chartTime")}</text>
+        <text x={padding.left - 8} y={padding.top + 12} textAnchor="end">{t("calc.chartBac")}</text>
       </g>
 
-      <line x1={padding.left} x2={800 - padding.right} y1={y(0)} y2={y(0)} stroke="currentColor" opacity={0.3} />
-      <line x1={padding.left} x2={800 - padding.right} y1={y(0.5)} y2={y(0.5)} stroke="red" opacity={0.5} strokeDasharray="6 6" />
+      <line x1={padding.left} x2={width - padding.right} y1={y(0)} y2={y(0)} stroke="currentColor" opacity={0.3} />
+      <line x1={padding.left} x2={width - padding.right} y1={y(0.5)} y2={y(0.5)} stroke="red" opacity={0.5} strokeDasharray="6 6" />
 
       <path d={path} fill="none" stroke="currentColor" strokeWidth={2} />
       <circle cx={x(peak.t)} cy={y(peak.bac)} r={4} fill="currentColor" />
