@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { getDictionary } from "../../lib/dictionary";
 import { Providers } from "../../components/Providers";
 import { defaultLocale, isLocale, type Locale } from "../../i18n/config";
@@ -17,17 +17,21 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png"
   },
-  themeColor: "#f59e0b"
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f59e0b",
 };
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const locale: Locale = isLocale(params.locale) ? (params.locale as Locale) : defaultLocale;
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? (rawLocale as Locale) : defaultLocale;
   const dict = await getDictionary(locale);
 
   return (
