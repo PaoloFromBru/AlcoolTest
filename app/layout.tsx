@@ -13,8 +13,7 @@ export const metadata: Metadata = {
       { url: "/icons/apple-icon-120x120.png", sizes: "120x120" },
       { url: "/icons/apple-icon-152x152.png", sizes: "152x152" },
       { url: "/icons/apple-icon-167x167.png", sizes: "167x167" },
-      { url: "/icons/apple-icon-180x180.png", sizes: "180x180" },
-      { url: "/icons/apple-icon-1024x1024.png", sizes: "1024x1024" }
+      { url: "/icons/apple-icon-180x180.png", sizes: "180x180" }
     ]
   }
 };
